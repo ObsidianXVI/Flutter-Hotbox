@@ -1,6 +1,6 @@
 part of hotbox;
 
-mixin HotboxArea on StatelessWidget {
+mixin HotboxArea on Widget {
   /// An out-of-the-box (no pun intended) function to display a [Hotbox]
   ///
   /// Override this function in the subclass to display in your own style instead.
