@@ -9,6 +9,7 @@ class HotboxArea<T> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return KeyboardListener(
+      autofocus: true,
       focusNode: focusNode,
       onKeyEvent: (KeyEvent event) {
         if (event is KeyDownEvent) {
