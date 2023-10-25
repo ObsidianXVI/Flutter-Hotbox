@@ -1,6 +1,6 @@
 part of hotbox;
 
-class HotboxArea extends StatelessWidget {
+class HotboxArea<T> extends StatelessWidget {
   final FocusNode focusNode = FocusNode();
   final Widget child;
 
@@ -24,7 +24,7 @@ class HotboxArea extends StatelessWidget {
   /// An out-of-the-box (no pun intended) function to display a [Hotbox]
   ///
   /// Override this function in the subclass to display in your own style instead.
-  void showHotbox<T>(
+  void showHotbox(
     BuildContext context, {
     List<Widget> rightSectorItems = const [],
     List<Widget> lowerSectorItems = const [],
