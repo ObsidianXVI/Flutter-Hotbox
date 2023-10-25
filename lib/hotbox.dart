@@ -1,6 +1,7 @@
 library hotbox;
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 part './hotbox_indexing.dart';
 part './hotbox_area.dart';

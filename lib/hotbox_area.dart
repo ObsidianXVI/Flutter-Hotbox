@@ -1,6 +1,26 @@
 part of hotbox;
 
-mixin HotboxArea on Widget {
+class HotboxArea extends StatelessWidget {
+  final FocusNode focusNode = FocusNode();
+  final Widget child;
+
+  HotboxArea({required this.child, super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return KeyboardListener(
+      focusNode: focusNode,
+      onKeyEvent: (KeyEvent event) {
+        if (event is KeyDownEvent) {
+          if (event.logicalKey == LogicalKeyboardKey.space) {
+            showHotbox(context);
+          }
+        }
+      },
+      child: child,
+    );
+  }
+
   /// An out-of-the-box (no pun intended) function to display a [Hotbox]
   ///
   /// Override this function in the subclass to display in your own style instead.
