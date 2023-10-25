@@ -1,23 +1,15 @@
 part of hotbox;
 
-abstract class HotboxArea extends StatelessWidget {
-  final Widget child;
-  final List<Widget> rightSectorItems;
-  final List<Widget> lowerSectorItems;
-  final List<Widget> leftSectorItems;
-
-  const HotboxArea({
-    required this.child,
-    this.rightSectorItems = const [],
-    this.lowerSectorItems = const [],
-    this.leftSectorItems = const [],
-    super.key,
-  });
-
+mixin HotboxArea on StatelessWidget {
   /// An out-of-the-box (no pun intended) function to display a [Hotbox]
   ///
   /// Override this function in the subclass to display in your own style instead.
-  void showHotbox<T>(BuildContext context) {
+  void showHotbox<T>(
+    BuildContext context, {
+    List<Widget> rightSectorItems = const [],
+    List<Widget> lowerSectorItems = const [],
+    List<Widget> leftSectorItems = const [],
+  }) {
     showDialog(
         context: context,
         barrierDismissible: true,
