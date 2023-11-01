@@ -7,43 +7,28 @@ part './hotbox_indexing.dart';
 part './hotbox_area.dart';
 part './hotbox_data.dart';
 
-class Hotbox extends StatelessWidget {
-  final HotboxData hotboxData;
+abstract class Hotbox<T> extends StatelessWidget {
+  final HotboxData<T> hotboxData;
+  final double width;
+  final double height;
+  final HotboxStyle style;
 
   const Hotbox({
     required this.hotboxData,
+    required this.width,
+    required this.height,
+    required this.style,
     super.key,
   });
 
   @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        width: 352,
-        height: 352,
-        color: Colors.red,
-        child: Padding(
-          padding: const EdgeInsets.all(10),
-          child: ListView(
-            children: List<Widget>.generate(
-                hotboxData.indexableContent.length,
-                (i) => Center(
-                      child: Container(
-                        width: 200,
-                        height: 60,
-                        color: Colors.amber,
-                        child: Padding(
-                          padding: const EdgeInsets.all(10),
-                          child: Align(
-                            alignment: Alignment.topLeft,
-                            child: Text(hotboxData.indexableContent[i]),
-                          ),
-                        ),
-                      ),
-                    )),
-          ),
-        ),
-      ),
-    );
-  }
+  Widget build(BuildContext context);
+}
+
+class HotboxStyle {
+  final Color backgroundColor;
+
+  const HotboxStyle({
+    required this.backgroundColor,
+  });
 }
