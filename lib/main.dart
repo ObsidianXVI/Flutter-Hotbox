@@ -17,16 +17,19 @@ class SomeApp extends StatelessWidget {
         child: Align(
           alignment: Alignment.topLeft,
           child: HotboxArea<DataX>(
-            hotbox: (data) => CustomHotbox(
+            hotbox: (data) => DefaultHotbox(
               hotboxData: HotboxData<DataX>(
                 indexableContent: data,
-                rightSectorItems: [],
-                lowerSectorItems: [],
-                leftSectorItems: [],
+                rightSector: const SizedBox(),
+                lowerSector: const SizedBox(),
+                leftSector: const SizedBox(),
               ),
               width: 800,
               height: 500,
-              style: const HotboxStyle(backgroundColor: Colors.black),
+              style: const HotboxStyle(
+                backgroundColor: Colors.black,
+                pieColor: Colors.amber,
+              ),
             ),
             child: const SizedBox(
               width: 900,

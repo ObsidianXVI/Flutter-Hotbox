@@ -4,14 +4,14 @@ class HotboxData<T> {
   /// The content, required to be of the same type, that the [HotboxArea] has
   /// access to.
   final List<T> indexableContent;
-  final List<Widget> rightSectorItems;
-  final List<Widget> lowerSectorItems;
-  final List<Widget> leftSectorItems;
+  final Widget rightSector;
+  final Widget lowerSector;
+  final Widget leftSector;
 
   const HotboxData({
     required this.indexableContent,
-    required this.rightSectorItems,
-    required this.lowerSectorItems,
-    required this.leftSectorItems,
+    required this.rightSector,
+    required this.lowerSector,
+    required this.leftSector,
   });
 }
